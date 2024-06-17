@@ -1,0 +1,3 @@
+authorise:
+  authorised_users:
+    - me@example.org
