@@ -14,8 +14,7 @@ AUTHORIZED_USERS = None
 def lambda_handler(event, context):
     body = parse_qs(event['body-json'])
     payload_encoded = body['payload'][0]
-    payload_str = unquote(payload_encoded)
-    payload = json.loads(payload_str)
+    payload = json.loads(unquote(payload_encoded))
 
     actions = payload.get('actions', [])
     user = payload.get('user', {})
